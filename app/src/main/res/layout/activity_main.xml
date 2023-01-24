@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".view.main.MainActivity">
+
+
+    <ImageView
+        android:id="@+id/iv_profile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_user_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/welcome"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@id/iv_profile"
+        app:layout_constraintTop_toTopOf="@id/iv_profile" />
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="@string/profile"
+        android:layout_marginStart="10dp"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/tv_user_welcome"
+        app:layout_constraintStart_toEndOf="@id/iv_profile"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_credit_card"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        app:contentPaddingLeft="30dp"
+        app:contentPaddingRight="30dp"
+        app:contentPaddingTop="25dp"
+        app:contentPaddingBottom="25dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@id/iv_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <ImageView
+            android:id="@+id/iv_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:alpha="0.9"
+            app:layout_constraintTop_toBottomOf="@id/iv_profile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/hana_02" />
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_expenses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/btn_income"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv_credit_card" />
+
+    <Button
+        android:id="@+id/btn_income"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/cv_credit_card"
+        app:layout_constraintStart_toEndOf="@id/btn_expenses"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
