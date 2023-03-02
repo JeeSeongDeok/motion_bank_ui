@@ -21,10 +21,13 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.bank_ui.R
+import com.example.bank_ui.ui.theme.color_primary
 import com.example.bank_ui.view.home.HomeScreen
 import com.example.bank_ui.view.setting.SettingScreen
 
-
+/**
+ * https://dribbble.com/shots/16116630-Bank-mobile-app 디자인
+ */
 @Preview
 @Composable
 fun MainScreen() {
@@ -58,7 +61,7 @@ fun BottomNavigation(navController: NavHostController) {
         BottomNavItem.Setting
     )
 
-    androidx.compose.material.BottomNavigation(
+    BottomNavigation(
         backgroundColor = Color.Black,
         contentColor = Color(0xFF3F414E)
     ) {
@@ -71,12 +74,11 @@ fun BottomNavigation(navController: NavHostController) {
                       painter = painterResource(id = R.drawable.icon_home_24),
                       contentDescription = "Failed",
                       modifier = Modifier
-                          .width(26.dp)
-                          .height(26.dp)
+                          .width(30.dp)
+                          .height(30.dp)
                   )
                 },
-                label = { Text(item.title, fontSize = 9.sp) },
-                selectedContentColor = MaterialTheme.colors.primary,
+                selectedContentColor = color_primary,
                 unselectedContentColor = Gray,
                 selected = currentRoute == item.screenRoute,
                 alwaysShowLabel = false,

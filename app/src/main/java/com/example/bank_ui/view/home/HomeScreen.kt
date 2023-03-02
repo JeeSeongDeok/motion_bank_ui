@@ -14,6 +14,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.bank_ui.R
+import com.example.bank_ui.ui.chart.Chart
 import com.example.bank_ui.ui.theme.Theme
 import com.example.bank_ui.ui.theme.color_background
 import com.example.bank_ui.ui.theme.white
@@ -29,6 +30,16 @@ fun HomeScreen() {
             Column {
                 Profile()
                 CardProfile()
+
+                Chart(
+                    data = mapOf(
+                        Pair(0.5f, "A"),
+                        Pair(0.6f, "B"),
+                        Pair(0.2f, "C"),
+                        Pair(0.7f, "D"),
+                        Pair(0.8f, "E"),
+                    )
+                )
             }
         }
     }
